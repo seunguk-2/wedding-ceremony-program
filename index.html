@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbf8ef">
+    <title>승욱과 지원의 결혼예식 순서</title>
+    <style>
+      :root {
+        --paper: #fbf8ef;
+        --ink: #111111;
+        --muted: #111111;
+        --line: rgba(92, 77, 57, 0.18);
+        --wine: #111111;
+        --olive: #111111;
+        --gold: #111111;
+        --note: #111111;
+        --heading-font:
+          "AppleMyungjo",
+          "Noto Serif KR",
+          "Batang",
+          serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--paper);
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink);
+        font-family:
+          "Apple SD Gothic Neo",
+          "Noto Sans KR",
+          "Malgun Gothic",
+          system-ui,
+          sans-serif;
+        line-height: 1.65;
+        background:
+          radial-gradient(circle at 18% 21%, rgba(17, 17, 17, 0.045) 0 0.7px, transparent 1px),
+          radial-gradient(circle at 76% 44%, rgba(17, 17, 17, 0.035) 0 0.6px, transparent 1px),
+          repeating-linear-gradient(84deg, rgba(17, 17, 17, 0.026) 0 1px, transparent 1px 9px),
+          repeating-linear-gradient(172deg, rgba(255, 255, 255, 0.46) 0 2px, rgba(17, 17, 17, 0.018) 2px 3px, transparent 3px 15px),
+          linear-gradient(rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)),
+          url("assets/handmade-paper.jpg") center top / cover no-repeat;
+        background-size:
+          23px 29px,
+          37px 41px,
+          180px 180px,
+          260px 260px,
+          auto,
+          cover;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .page {
+        width: min(100%, 480px);
+        margin: 0 auto;
+        padding: 28px 18px 44px;
+      }
+
+      .leaflet {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .leaflet::before,
+      .leaflet::after {
+        content: none;
+      }
+
+      .leaflet::before {
+        top: 18px;
+      }
+
+      .leaflet::after {
+        bottom: 18px;
+      }
+
+      header {
+        min-height: 54svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 78px 24px 26px;
+        text-align: center;
+      }
+
+      .ceremony-date {
+        margin: 0 0 48px;
+        color: var(--wine);
+        font-family: var(--heading-font);
+        font-size: 1.16rem;
+        letter-spacing: 0.1em;
+      }
+
+      .couple-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 20px;
+        width: min(100%, 21rem);
+        margin: 0 auto;
+      }
+
+      .couple-role {
+        color: var(--muted);
+        font-family: var(--heading-font);
+        font-size: 0.92rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+      }
+
+      .couple-name {
+        color: var(--ink);
+        font-family: var(--heading-font);
+        font-size: clamp(1.8rem, 9vw, 2.65rem);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      .officiant {
+        margin: 58px 0 0;
+        color: var(--muted);
+        font-family: var(--heading-font);
+        font-size: clamp(1.32rem, 5.6vw, 1.85rem);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        word-break: keep-all;
+      }
+
+      .officiant-label {
+        font-size: 0.72em;
+      }
+
+      main {
+        padding: 6px 18px 42px;
+      }
+
+      .section-line {
+        display: block;
+        height: 1px;
+        margin: 0 0 22px;
+        border: 0;
+        background: var(--line);
+      }
+
+      .program {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .program-item {
+        display: grid;
+        grid-template-columns: 2.4rem 1fr;
+        gap: 14px;
+        align-items: start;
+        min-height: 54px;
+        padding: 14px 2px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .number {
+        padding-top: 0.23rem;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 0.82rem;
+        line-height: 1.4;
+        text-align: right;
+      }
+
+      .item-main {
+        min-width: 0;
+      }
+
+      .item-title {
+        display: flex;
+        min-height: 1.8rem;
+        align-items: center;
+        margin: 0;
+        color: var(--ink);
+        font-size: 1.03rem;
+        font-weight: 650;
+        letter-spacing: 0;
+        word-break: keep-all;
+      }
+
+      .flip-panel {
+        display: block;
+        width: calc(100% + 4px);
+        min-height: 54px;
+        margin: -14px -2px;
+        padding: 14px 2px;
+        border: 0;
+        color: inherit;
+        background: transparent;
+        cursor: pointer;
+        perspective: 800px;
+        text-align: left;
+      }
+
+      .flip-panel:focus-visible {
+        outline: 0;
+      }
+
+      .flip-panel:focus-visible .item-title,
+      .flip-panel:focus-visible .flip-back {
+        text-decoration: underline;
+        text-decoration-color: rgba(89, 111, 80, 0.38);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 5px;
+      }
+
+      .flip-inner {
+        display: grid;
+        min-height: 1.8rem;
+        transform-style: preserve-3d;
+        transition: transform 260ms ease;
+      }
+
+      .flip-panel[aria-pressed="true"] .flip-inner {
+        transform: rotateX(180deg);
+      }
+
+      .flip-face {
+        grid-area: 1 / 1;
+        backface-visibility: hidden;
+      }
+
+      .flip-front {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .flip-back {
+        display: flex;
+        align-items: center;
+        min-height: 1.8rem;
+        color: var(--wine);
+        font-family:
+          "Times New Roman",
+          "AppleMyungjo",
+          "Batang",
+          serif;
+        font-size: 1.08rem;
+        transform: rotateX(180deg);
+        word-break: keep-all;
+      }
+
+      .music-note {
+        flex: 0 0 auto;
+        color: var(--note);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.28rem;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .flip-panel[aria-pressed="true"] .music-note {
+        color: var(--olive);
+      }
+
+      footer {
+        padding: 8px 26px 52px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        text-align: center;
+        word-break: keep-all;
+      }
+
+      @media (min-width: 520px) {
+        .page {
+          padding-block: 36px 56px;
+        }
+
+        header {
+          min-height: 500px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <article class="leaflet" aria-label="승욱과 지원의 결혼예식 순서">
+        <header>
+          <p class="ceremony-date">2026.07.11</p>
+          <div class="couple-grid" aria-label="신랑 김승욱, 신부 서지원">
+            <div class="couple-role">신랑</div>
+            <div class="couple-role">신부</div>
+            <div class="couple-name">김승욱</div>
+            <div class="couple-name">서지원</div>
+          </div>
+          <p class="officiant"><span class="officiant-label">주례</span> | 백재용 목사</p>
+        </header>
+
+        <main>
+          <hr class="section-line" aria-hidden="true">
+          <ol class="program">
+            <li class="program-item">
+              <span class="number">01</span>
+              <div class="item-main">
+                <p class="item-title">개식사</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">02</span>
+              <div class="item-main">
+                <p class="item-title">양가 어머니 입장</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">03</span>
+              <div class="item-main">
+                <p class="item-title">화촉점화</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">04</span>
+              <div class="item-main">
+                <p class="item-title">주례 입장 및 소개</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">05</span>
+              <div class="item-main">
+                <button class="flip-panel" type="button" aria-pressed="false" aria-label="신랑 입장곡 보기">
+                  <span class="flip-inner">
+                    <span class="flip-face flip-front">
+                      <span class="item-title">신랑 입장</span>
+                      <span class="music-note" aria-hidden="true">♪</span>
+                    </span>
+                    <span class="flip-face flip-back">King of Kings</span>
+                  </span>
+                </button>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">06</span>
+              <div class="item-main">
+                <button class="flip-panel" type="button" aria-pressed="false" aria-label="신부 입장곡 보기">
+                  <span class="flip-inner">
+                    <span class="flip-face flip-front">
+                      <span class="item-title">신부 입장</span>
+                      <span class="music-note" aria-hidden="true">♪</span>
+                    </span>
+                    <span class="flip-face flip-back">Holy Forever</span>
+                  </span>
+                </button>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">07</span>
+              <div class="item-main">
+                <p class="item-title">맞절</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">08</span>
+              <div class="item-main">
+                <p class="item-title">주례 말씀</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">09</span>
+              <div class="item-main">
+                <p class="item-title">혼인 서약</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">10</span>
+              <div class="item-main">
+                <p class="item-title">예물교환</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">11</span>
+              <div class="item-main">
+                <p class="item-title">축복기도</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">12</span>
+              <div class="item-main">
+                <p class="item-title">성혼 선포</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">13</span>
+              <div class="item-main">
+                <button class="flip-panel" type="button" aria-pressed="false" aria-label="축가 곡명 보기">
+                  <span class="flip-inner">
+                    <span class="flip-face flip-front">
+                      <span class="item-title">축가</span>
+                      <span class="music-note" aria-hidden="true">♪</span>
+                    </span>
+                    <span class="flip-face flip-back">내가 천사의 말 한다 해도</span>
+                  </span>
+                </button>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">14</span>
+              <div class="item-main">
+                <p class="item-title">부모님 인사</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">15</span>
+              <div class="item-main">
+                <p class="item-title">내빈 인사</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">16</span>
+              <div class="item-main">
+                <p class="item-title">축도</p>
+              </div>
+            </li>
+            <li class="program-item">
+              <span class="number">17</span>
+              <div class="item-main">
+                <button class="flip-panel" type="button" aria-pressed="false" aria-label="신랑 신부 행진곡 보기">
+                  <span class="flip-inner">
+                    <span class="flip-face flip-front">
+                      <span class="item-title">신랑 신부 행진</span>
+                      <span class="music-note" aria-hidden="true">♪</span>
+                    </span>
+                    <span class="flip-face flip-back">Lord it feels good</span>
+                  </span>
+                </button>
+              </div>
+            </li>
+          </ol>
+        </main>
+
+        <footer>
+          귀한 걸음으로 함께해 주셔서 감사합니다.
+        </footer>
+      </article>
+    </div>
+
+    <script>
+      const musicButtons = document.querySelectorAll(".flip-panel");
+
+      musicButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const isOpen = button.getAttribute("aria-pressed") === "true";
+
+          button.setAttribute("aria-pressed", String(!isOpen));
+        });
+      });
+    </script>
+  </body>
+</html>
