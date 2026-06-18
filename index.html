@@ -9,16 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
     <style>
+      @font-face {
+        font-family: "WeddingHeading";
+        src: url("assets/fonts/source-han-serif-k-heading.woff2") format("woff2");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+      }
+
       :root {
         --paper: #fbf8ef;
         --ink: #111111;
         --muted: #111111;
+        --date: #5c5144;
         --line: rgba(92, 77, 57, 0.18);
         --wine: #111111;
         --olive: #111111;
         --gold: #111111;
         --note: #111111;
         --heading-font:
+          "WeddingHeading",
           "Source Han Serif K",
           "본명조",
           "AppleMyungjo",
@@ -101,7 +111,7 @@
 
       .ceremony-date {
         margin: 0 0 48px;
-        color: var(--wine);
+        color: var(--date);
         font-family: var(--heading-font);
         font-size: 1.16rem;
         letter-spacing: 0.1em;
@@ -145,6 +155,10 @@
 
       .officiant-label {
         font-size: 0.72em;
+      }
+
+      .officiant-title {
+        font-size: 0.88em;
       }
 
       main {
@@ -339,7 +353,7 @@
             <div class="couple-name">김승욱</div>
             <div class="couple-name">서지원</div>
           </div>
-          <p class="officiant"><span class="officiant-label">주례</span> | 백재용 목사</p>
+          <p class="officiant"><span class="officiant-label">주례</span> | 백재용 <span class="officiant-title">목사</span></p>
         </header>
 
         <main>
