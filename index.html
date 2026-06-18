@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fbf8ef">
     <title>승욱과 지원의 결혼예식 순서</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
     <style>
       :root {
         --paper: #fbf8ef;
@@ -16,10 +19,23 @@
         --gold: #111111;
         --note: #111111;
         --heading-font:
+          "Source Han Serif K",
+          "본명조",
           "AppleMyungjo",
-          "Noto Serif KR",
           "Batang",
           serif;
+        --program-font:
+          "Nanum Myeongjo",
+          "Source Han Serif K",
+          "AppleMyungjo",
+          "Batang",
+          serif;
+        --song-font:
+          "Apple SD Gothic Neo",
+          "Noto Sans KR",
+          "Malgun Gothic",
+          system-ui,
+          sans-serif;
       }
 
       * {
@@ -148,6 +164,7 @@
         gap: 0;
         margin: 0;
         padding: 0;
+        font-family: var(--program-font);
         list-style: none;
       }
 
@@ -181,7 +198,7 @@
         margin: 0;
         color: var(--ink);
         font-size: 1.03rem;
-        font-weight: 650;
+        font-weight: 700;
         letter-spacing: 0;
         word-break: keep-all;
       }
@@ -264,12 +281,9 @@
         align-items: center;
         min-height: 1.8rem;
         color: var(--wine);
-        font-family:
-          "Times New Roman",
-          "AppleMyungjo",
-          "Batang",
-          serif;
+        font-family: var(--song-font);
         font-size: 1.08rem;
+        font-weight: 500;
         transform: rotateX(180deg);
         word-break: keep-all;
       }
